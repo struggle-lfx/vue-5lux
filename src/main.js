@@ -3,13 +3,13 @@ import App from './App.vue'
 
 import './assets/styles/reset.styl'
 import './assets/styles/icons.styl'
-// import router from './router'
+import router from './router'
 // import store from './store'
 
 Vue.config.productionTip = false
 
 new Vue({
-  // router,
+  router,
   // store,
   render: h => h(App)
 }).$mount('#app')

@@ -2,34 +2,34 @@
   <nav>
     <ul class="nav">
       <li class="active">
-        <a href="#/index/home/main">
+        <router-link to="/">
           <i class="yo-ico">&#xe628;</i>
           <b>首页</b>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#/index/home/shop">
+        <router-link to="/shop">
           <i class="yo-ico">&#xe7e4;</i>
           <b>商城</b>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#/index/home/server">
+        <router-link to="/overseas">
           <i class="yo-ico">&#xe60e;</i>
           <b>海外服务</b>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#/index/home/arrival">
+        <router-link to="/arrival">
           <i class="yo-ico">&#xe766;</i>
           <b>到店</b>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#/index/home/my">
+        <router-link to="/my">
           <i class="yo-ico">&#xe78c;</i>
           <b>我的</b>
-        </a>
+        </router-link>
       </li>
     </ul>
   </nav>
