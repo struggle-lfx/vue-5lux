@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="index-container">
         <Header></Header>
-        shop
+        <main>shop</main>
         <Footer></Footer>
     </div>
 </template>

@@ -1,6 +1,7 @@
 <template>
-    <div>
-        arrival
+    <div class="index-container">
+      <main>arrival</main>
+        
 
         <Footer></Footer>
     </div>

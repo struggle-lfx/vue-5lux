@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <Header></Header>index
+  <div class="index-container">
+    <Header></Header>
+    <main>index</main>
     <Footer></Footer>
   </div>
 </template>
@@ -14,13 +15,6 @@ export default {
   }
 };
 </script>
-<style lang="stylus">.index-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+<style lang="stylus">
 
-  main {
-    flex: 1;
-  }
-}
 </style>
