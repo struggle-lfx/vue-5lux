@@ -3,23 +3,29 @@
     <Header></Header>
     <main>
       <Swipper v-bind:swipperdata="swipperdata"></Swipper>
+      <Nav></Nav>
+      <Advising></Advising>
 
 
-      22222
+
     </main>
     <Footer></Footer>
   </div>
 </template>
 <script>
+import http from '../../utils/http'
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
 import Swipper from '../../components/swipper.vue'
-import http from '../../utils/http'
+import Nav from './nav'
+import Advising from './advising'
 export default {
   components: {
     Header,
     Footer,
-    Swipper
+    Swipper,
+    Nav,
+    Advising
   },
   data() {
     return {
@@ -32,7 +38,6 @@ export default {
       url:'/index/index_slider'
     })
     this.swipperdata = result.data  
-    console.log(result)
   }
 };
 </script>

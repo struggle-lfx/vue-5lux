@@ -30,35 +30,32 @@
 </template>
 
 <style lang="stylus">
-nav {
-  height: 0.48rem;
+nav 
+  height 0.48rem
 
-  ul {
-    height: 0.48rem;
-    display: flex;
-    background: black;
-    color: grey;
+  ul 
+    height 0.48rem
+    display flex
+    background black
+    color grey
 
-    li {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    li 
+      flex 1
+      display flex
+      flex-direction column
+      align-items center
 
-      &.active {
-        color: white;
-      }
+      &.active 
+        color white
+      
 
-      i {
-        font-size: 0.2rem;
-        font-weight: 100;
-      }
+      i 
+        font-size 0.2rem
+        font-weight 100
+      
 
-      b {
-        font-size: 0.1rem;
-        font-weight: 100;
-      }
-    }
-  }
-}
+      b 
+        font-size 0.1rem
+        font-weight 100
+
 </style>

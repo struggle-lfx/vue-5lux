@@ -46,9 +46,9 @@ export default new Router({
       name: 'my',
       component: My
     },
-    // {   //vue的路由都是排他性的
-    //   path:'*',
-    //   component:page404
-    // }
+    {   //vue的路由都是排他性的
+      path:'*',
+      component:page404
+    }
   ]
 })
