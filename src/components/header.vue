@@ -26,11 +26,14 @@ header
     border-radius .05rem;
     background-color hsla(0,0%,100%,.5);
     display: flex
-    >span
-        font-size .16rem
-        margin 0 .08rem    
-    i
-        font-size .16rem
+    a 
+      width 100%
+      color #000
+      >span
+          font-size .16rem
+          margin 0 .08rem    
+      i
+          font-size .16rem
 
   >span
       font-size .22rem

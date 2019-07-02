@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Index from './pages/index.vue'
-import Shop from './pages/shop.vue'
-import Arrival from './pages/arrival.vue'
-import Overseas from './pages/overseas.vue'
-import My from './pages/my.vue'
+import Shop from './pages/shop/shop.vue'
+import Arrival from './pages/arrival/arrival.vue'
+import Overseas from './pages/overseas/overseas.vue'
+import My from './pages/my/my.vue'
 import page404 from './pages/page404.vue'
-import Home from './pages/home.vue'
+import Home from './pages/home/home.vue'
 
 Vue.use(Router)
 
@@ -15,7 +14,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
+      redirect:'/home'
+    },
+    {
+      path: '/home',
+      name: 'home',
       component: Home
     },
     {
@@ -43,9 +46,9 @@ export default new Router({
       name: 'my',
       component: My
     },
-    {   //vue的路由都是排他性的
-      path:'*',
-      component:page404
-    }
+    // {   //vue的路由都是排他性的
+    //   path:'*',
+    //   component:page404
+    // }
   ]
 })
