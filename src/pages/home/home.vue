@@ -5,6 +5,9 @@
       <Swipper v-bind:swipperdata="swipperdata"></Swipper>
       <Nav></Nav>
       <Advising></Advising>
+      <Advert></Advert>
+      <Adverother></Adverother>
+      
 
 
 
@@ -19,13 +22,19 @@ import Footer from "../../components/footer.vue";
 import Swipper from '../../components/swipper.vue'
 import Nav from './nav'
 import Advising from './advising'
+import Advert from './advert'
+import Adverother from './adver-other'
+
 export default {
   components: {
     Header,
     Footer,
     Swipper,
     Nav,
-    Advising
+    Advising,
+    Advert,
+    Adverother,
+    AdverSmall
   },
   data() {
     return {
@@ -35,15 +44,17 @@ export default {
 
   async mounted() {
     let result =  await http.get({
-      url:'/index/index_slider'
+      url:'/api/index/index_slider'
     })
     this.swipperdata = result.data  
   }
 };
 </script>
 <style lang="stylus" >
-.mint-swipe 
-  width 100%
-  height 412px
+main 
+  overflow auto
+  .mint-swipe 
+    width 100%
+    height 412px
 
 </style>

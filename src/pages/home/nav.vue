@@ -30,6 +30,7 @@
   display flex
   color #7e8c8d
   height 0.82rem
+  background #fff
   li
     flex 1
     display flex

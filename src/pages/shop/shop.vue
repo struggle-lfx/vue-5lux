@@ -1,8 +1,8 @@
 <template>
     <div class="index-container">
         <Header></Header>
-        <main>111
-          <Swipper v-bind:swipperdata="swipperdata"></Swipper>222
+        <main>
+          <Swipper v-bind:swipperdata="swipperdata"></Swipper>
         </main>
         <Footer></Footer>
     </div>
@@ -26,11 +26,14 @@ export default {
 
   async mounted() {
     let result =  await http.get({
-      url:'/index/shop/slide?mtoken='
+      url:'/api/shop/slide',
+      params:{
+        mtoken:''
+      }
     })
-console.log(result) 
-    let relresult = JSON.stringify(result)
-    this.swipperdata = result[data] 
+        console.log(result.data)
+    this.swipperdata = result.data
+
     
   }
 };

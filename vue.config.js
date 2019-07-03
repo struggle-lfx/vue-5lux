@@ -1,9 +1,12 @@
 module.exports = {
     devServer: {
       proxy: {
-        '/index': {
+        '/api': {
           target: 'https://apim.restful.5lux.com.cn',
-          changeOrigin: true
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': ''
+        }
           
         }
       }
