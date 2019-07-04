@@ -3,7 +3,7 @@
     <ul v-for="advertitem in advertotherdata" :key="advertitem.ad_id">
       <li v-for="advertlist in advertitem" :key="advertlist.ad_id">
         <img :src="advertlist.ad_code" />
-        <AdverSmall v-bind:adver-small="adver-small"></AdverSmall>
+        <!-- <AdverSmall v-bind:adver-small="adver-small"></AdverSmall> -->
       </li>
     </ul>
   </div>

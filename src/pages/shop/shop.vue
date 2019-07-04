@@ -2,7 +2,10 @@
     <div class="index-container">
         <Header></Header>
         <main>
+          <ShopNav></ShopNav>
           <Swipper v-bind:swipperdata="swipperdata"></Swipper>
+          <ButtonInfo></ButtonInfo>
+          <Fashion></Fashion>
         </main>
         <Footer></Footer>
     </div>
@@ -11,12 +14,18 @@
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
 import Swipper from '../../components/swipper.vue';
+import ShopNav from './ShopNav';
 import http from '../../utils/http'
+import ButtonInfo from './ButtonInfo'
+import Fashion from './Fashion'
 export default {
   components: {
     Header,
     Footer,
-    Swipper
+    Swipper,
+    ShopNav,
+    ButtonInfo,
+    Fashion
   },
   data() {
     return {
@@ -31,7 +40,6 @@ export default {
         mtoken:''
       }
     })
-        console.log(result.data)
     this.swipperdata = result.data
 
     

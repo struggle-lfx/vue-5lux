@@ -8,9 +8,6 @@
       <Advert></Advert>
       <Adverother></Adverother>
       
-
-
-
     </main>
     <Footer></Footer>
   </div>
@@ -33,8 +30,8 @@ export default {
     Nav,
     Advising,
     Advert,
-    Adverother,
-    AdverSmall
+    Adverother
+
   },
   data() {
     return {

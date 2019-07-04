@@ -1,6 +1,7 @@
 <template>
 <div>
 <ul v-for="advertitem in advertotherdata" :key="advertitem.ad_id">
+  <img :src="advertitem.ad_code" />
     <li v-for="advertlist in advertitem" :key="advertlist.ad_id">
        
       <img :src="advertlist.ad_code" />
