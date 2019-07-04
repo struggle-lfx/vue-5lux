@@ -6,6 +6,7 @@
           <Swipper v-bind:swipperdata="swipperdata"></Swipper>
           <ButtonInfo></ButtonInfo>
           <Fashion></Fashion>
+          <!-- s -->
         </main>
         <Footer></Footer>
     </div>
@@ -18,6 +19,7 @@ import ShopNav from './ShopNav';
 import http from '../../utils/http'
 import ButtonInfo from './ButtonInfo'
 import Fashion from './Fashion'
+import Oversea from './Oversea'
 export default {
   components: {
     Header,
@@ -25,7 +27,8 @@ export default {
     Swipper,
     ShopNav,
     ButtonInfo,
-    Fashion
+    Fashion,
+    Oversea
   },
   data() {
     return {
