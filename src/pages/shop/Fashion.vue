@@ -40,10 +40,14 @@
         </li>
       </ul>
     </div>
+    <shop-other></shop-other>
+    <shop-list></shop-list>
   </div>
 </template>
 <script>
 import http from "../../utils/http";
+import ShopOther from './ShopOther'
+import ShopList from './ShopList';
 export default {
   data() {
     return {
@@ -56,12 +60,16 @@ export default {
       vipdata:''
     };
   },
+  components:{
+    ShopOther,
+    ShopList
+
+  },
 
   async mounted() {
     let result = await http.get({
       url: "/api/shop/home_all_info"
     });
-
     // let data = result.data.fashion_video;
     // let arr = [];
     // for (let i in data) {
@@ -133,16 +141,17 @@ div
             position absolute
             left 0
             bottom 5%
+            margin-right 1%
             img 
                 height 100%
         li:nth-child(3)
             position absolute
-            left 49%
+            left 51%
             bottom 30%
             img 
                 height 100%
             p 
-                bottom 10%
+                bottom -114%
         li:nth-child(1)
             p 
                 bottom 55%

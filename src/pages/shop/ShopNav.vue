@@ -27,7 +27,6 @@ export default {
 .shopnav 
   width 100%
   overflow hidden
-  position fixed
 
   ul 
     padding-left 25px
@@ -36,9 +35,6 @@ export default {
     overflow auto
     align-items center 
     height 39px
-
-
-    
 
     li 
       margin-right 30px

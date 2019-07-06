@@ -26,7 +26,7 @@ export default {
     });
 
     this.advertotherdata = result.data.article_list;
-    console.log(this.advertotherdata);
+    console.log(result.data);
   }
 };
 </script>
