@@ -28,8 +28,8 @@
         </div>
         <div class="nav">
           <ul>
-            <li v-for="product_info in article_list.ads_info.product_info" :key="product_info.id" :id="product_info.id" @click="handleclick">
-              <img :src="product_info.product_thumb" alt srcset />
+            <li v-for="product_info in article_list.ads_info.product_info" :key="product_info.id" :id="product_info.id" @click="handleclick(product_info.product_id)">
+              <div><img :src="product_info.product_thumb" alt srcset /></div>
               <p>{{product_info.ad_title}}</p>
               <span>{{product_info.ad_subtitle}}</span>
             </li>
@@ -52,11 +52,22 @@ export default {
     let result = await http.get({
       url: "/api/index/other_advert"
     });
-    //console.log(JSON.stringify(result.data))
     this.advertdata = result.data;
-    // ss
-    console.log(result.data.article_list);
-  }
+    console.log(result.data)
+
+  },
+  methods: {
+    handleclick(id){
+      console.log(id)
+      this.$router.push({
+        name:'details',
+        params:{
+          id
+        }
+      })
+
+    }
+  },
 };
 </script>
 <style lang="stylus" scoped>
@@ -117,8 +128,13 @@ export default {
           p
             font-size .13rem
             color #333
-          img 
-            height 80%
+          div
+            height 1.3rem
+            img 
+              height 100%
+              width 100%
+              object-fit contain 
+              vertical-align middle
            
    
 </style>

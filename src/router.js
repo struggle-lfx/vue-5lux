@@ -5,8 +5,9 @@ import Shop from './pages/shop/shop.vue'
 import Arrival from './pages/arrival/arrival.vue'
 import Overseas from './pages/overseas/overseas.vue'
 import My from './pages/my/my.vue'
-import page404 from './pages/page404.vue'
+import page404 from './pages/404/page404.vue'
 import Home from './pages/home/home.vue'
+import Details from './pages/details/Details'
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/my',
       name: 'my',
       component: My
+    },
+    {
+      path:'/details/:id',
+      name:'details',
+      component:Details
     },
     {   //vue的路由都是排他性的
       path:'*',

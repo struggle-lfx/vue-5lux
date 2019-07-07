@@ -2,7 +2,9 @@
 
     <mt-swipe >
       <mt-swipe-item v-for="swipper in swipperdata" :key="swipper.slide_id ">
-        <img :src="swipper.silde_original"/>
+        
+
+         <img :src="swipper.silde_original"/>
       </mt-swipe-item>
     </mt-swipe>
 
