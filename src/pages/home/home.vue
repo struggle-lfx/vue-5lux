@@ -6,7 +6,7 @@
       <Nav></Nav>
       <Advising></Advising>
       <Advert></Advert>
-      <Adverother></Adverother>
+      <!-- <Adverother></Adverother> -->
       
     </main>
     <Footer></Footer>
@@ -52,6 +52,6 @@ main
   overflow auto
   .mint-swipe 
     width 100%
-    height 412px
+    height 4.12rem
 
 </style>

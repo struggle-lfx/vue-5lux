@@ -32,7 +32,6 @@
 <style lang="stylus">
 nav 
   height 0.48rem
-
   ul 
     height 0.48rem
     display flex
