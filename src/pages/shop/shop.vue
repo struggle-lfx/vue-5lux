@@ -51,7 +51,9 @@ export default {
 
 <style lang="stylus" scoped>
 .mint-swipe 
-  height 300px
+  height 49%
   width 100%
+    img 
+      width 100%
 
 </style>

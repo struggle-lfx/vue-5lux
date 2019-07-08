@@ -6,9 +6,10 @@ module.exports = {
           changeOrigin: true,
           pathRewrite: {
             '^/api': ''
+          }         
         }
-          
-        }
-      }
-    }
+      },
+      disableHostCheck: true,
+    },
+
   }

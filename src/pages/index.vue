@@ -11,7 +11,7 @@ export default {
 };
 </script>
 <style lang="stylus">
-html 
+html
   background #fff
 </style>
 

@@ -24,9 +24,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-img 
-  height 100%
-  width 100%
+
 >>>.mint-swipe-indicator
       color #fff
       opacity 1 

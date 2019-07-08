@@ -1,27 +1,29 @@
 <template>
   <div>
-    <Swipper4 v-bind:swipperdata="swipperdata"></Swipper4>
-    <span @click="handclick">返回</span>
+    <Swiper></Swiper>
+    <span @click="handclick" class="back"></span>
+    <div class="price">
+      <span>{{details.goods_info.product_price}}</span>
+      <i>{{details.goods_info.market_price}}</i>
+      <b @click="rankclick">{{details.user_price_info.rank_name}}</b>
+
+
+    </div>
   </div>
 </template>
 
 <script>
 import http from "../../utils/http";
-import Swipper4 from "../../components/Swipper4";
+import Swiper from "../../components/Swiper";
+import { MessageBox } from 'mint-ui';
 export default {
   data() {
     return {
-      swipperdata: []
+      details: ""
     };
   },
   components: {
-    Swipper4
-  },
-
-  methods: {
-    handclick() {
-      this.$router.back();
-    }
+    Swiper
   },
   async mounted() {
     let result = await http.get({
@@ -30,19 +32,33 @@ export default {
         id: this.$route.params.id
       }
     });
-    this.swipperdata = result.data.goods_gallery;
+    console.log(result.data)
+    this.details = result.data;
+  },
+  methods: {
+    handclick() {
+      this.$router.back();
+    },
+    rankclick(){
+      MessageBox({
+        title: '会员价',
+        message: this.price,
+      });
+    },
 
-
-    console.log(result.data);
   }
 };
 </script>
 
 <style lang="stylus">
-.swiper-container 
-    width 600px
-    height 300px
-    img 
-        width 100%
-
+.back {
+  background: url('/back.png') no-repeat;
+  position: absolute;
+  top: 0.07rem;
+  left: 0.13rem;
+  z-index: 2000;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+}
 </style>
