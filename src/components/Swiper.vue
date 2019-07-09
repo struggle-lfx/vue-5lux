@@ -5,7 +5,7 @@
         <img :src="swipper.filepath" />
             <div class="swiper-pagination swiper-pagination-fraction">
               <span class="swiper-pagination-current">{{index+1}}</span> /
-              <span class="swiper-pagination-total">5</span>
+              <span class="swiper-pagination-total">{{length}}</span>
           </div>
       </div>
     </div>
@@ -33,6 +33,7 @@ export default {
       }
     });
     this.swipperdata = result.data.goods_gallery;
+    this.length = result.data.goods_gallery.length
     this.$nextTick(() => {
       var mySwiper = new Swiper(".swiper-container", {
         loop: true

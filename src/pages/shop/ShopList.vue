@@ -36,7 +36,6 @@ export default {
     let result = await http.get({
       url: "/api/shop/home_all_info"
     });
-    console.log(result.data.fashion_guide.list.product_info)
     this.fashion_guide = result.data.fashion_guide.list.product_info
     // this.top5flaglist = this.fashion_guide.list
   }

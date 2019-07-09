@@ -53,7 +53,6 @@ export default {
       url: "/api/index/other_advert"
     });
     this.advertdata = result.data;
-    console.log(result.data)
 
   },
   methods: {
