@@ -9,7 +9,8 @@ import Index from './pages/index'
 export default {
   components:{
     Index
-  }  
+  },
+
 }
 </script>
 <style lang="stylus">

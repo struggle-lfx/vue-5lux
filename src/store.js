@@ -6,10 +6,12 @@ Vue.use(Vuex)
 
 const store =   new Vuex.Store({
   state: {
-    count:1
+    goodsList:[]
   },
-  mutations: {
-
+  mutations:{
+    addGoods:(state,data)=>{
+        state.goodsList.push(data);                      
+    },
   },
   actions: {
 
