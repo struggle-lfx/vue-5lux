@@ -1,15 +1,30 @@
 <template>
     <header>
-      <div class="search">
-        <a href="#/index/search">
+      <div class="search"  @click="search">
+        <!-- <a href="#/search"> -->
           <span class="yo-ico">&#xe650;</span>
           <i>5LUX.COM</i>
-        </a>
+        <!-- </a> -->
       </div>
-      <span class="yo-ico">&#xe6cd;</span>
+      <span class="yo-ico">&#xe6cd;</span><b v-show="number>0">{{number}}</b>
     </header>
 </template>
 
+<script>
+export default {
+  computed: {
+    number(){
+          return this.$store.getters.number
+      }
+
+  },
+  methods: {
+    search(){
+      this.$router.push('/search')
+    }
+  },
+}
+</script>
 
 <style lang="stylus">
 header
@@ -38,6 +53,9 @@ header
   >span
       font-size .22rem
       color #fff
+
+  b 
+    color red
   
        
 </style>

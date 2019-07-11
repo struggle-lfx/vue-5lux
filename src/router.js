@@ -8,6 +8,7 @@ import My from './pages/my/my.vue'
 import page404 from './pages/404/page404.vue'
 import Home from './pages/home/home.vue'
 import Details from './pages/details/Details'
+import Search from './pages/search/Search'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ export default new Router({
       path:'/details/:id',
       name:'details',
       component:Details
+    },
+    {
+      path:'/search',
+      name:'serach',
+      component:Search
     },
     {   //vue的路由都是排他性的
       path:'*',

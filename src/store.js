@@ -11,8 +11,13 @@ const store =   new Vuex.Store({
   mutations:{
     addGoods:(state,data)=>{
         state.goodsList.push(data);                      
-    },
+    }
   },
+  getters:{
+    goodsNumber:state=>{
+        return state.goodsList.length
+    }
+},
   actions: {
 
   }
