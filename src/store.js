@@ -12,7 +12,7 @@ const store =   new Vuex.Store({
     addTocar(state,data){
       let goods=state.goodsList.find(v=>v.id==data.id)
       if(goods){
-        goods.productCount +=1
+        goods.productCount += data.productCount
       }else{
         state.goodsList.push(data)
       }                 
@@ -20,7 +20,11 @@ const store =   new Vuex.Store({
   },
   getters:{
     goodsNumber:state=>{
-        return state.goodsList.length
+      let sum = 0
+      state.goodsList.forEach(value=>{
+        sum +=value.productCount
+      })
+        return sum
     }
 },
   actions: {

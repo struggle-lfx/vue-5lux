@@ -6,11 +6,12 @@
           <i>5LUX.COM</i>
         <!-- </a> -->
       </div>
-      <span class="yo-ico">&#xe6cd;</span><b v-show="number>0">{{number}}</b>
+      <span class="yo-ico">&#xe6cd;</span><b v-show="goodsNumber>0">{{goodsNumber}}</b>
     </header>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   computed: {
     number(){
@@ -23,6 +24,11 @@ export default {
       this.$router.push('/search')
     }
   },
+  computed:{
+    ...mapGetters({
+      goodsNumber:'goodsNumber'
+    })
+  }
 }
 </script>
 
@@ -41,6 +47,7 @@ header
     border-radius .05rem;
     background-color hsla(0,0%,100%,.5);
     display: flex
+    position relative
     a 
       width 100%
       color #000
@@ -55,7 +62,20 @@ header
       color #fff
 
   b 
-    color red
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #f33;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    line-height: 15px;
+    right: 11px;
+    top: 9px;
   
        
 </style>
