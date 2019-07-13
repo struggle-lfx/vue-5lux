@@ -32,7 +32,7 @@
           <div class="pay-top">
             <b>分期支付</b>
             <span>{{details.installment_str}}</span>
-            <i></i>
+            <i @click="fenqi"></i>
           </div>
           <div class="pay-bottom">
             <ul>
@@ -45,6 +45,8 @@
           </div>
         </div>
       </div>
+
+      <!-- fotter底部caidanlan -->
       <footer>
         <ul>
           <li>
@@ -60,6 +62,7 @@
         </ul>
       </footer>
     </div>
+    <!-- 加入购物袋 -->
     <div v-show="isshow" class="addgoods">
       <div class="pttitle">
         <div class="ptimg">
@@ -99,6 +102,20 @@
       </div>
       <div class="button" @click="addgoods">确定</div>
     </div>
+    <!-- 分期详情 -->
+    <div class="mengceng" v-show="fenqiIsshow | isshow"></div>
+    <div v-show="fenqiIsshow" class="fenqi" >
+      <h2>分期详情</h2>
+      <span class="yo-ico quxiao" @click="fenqi">&#xe641;</span>
+      <ul>
+        <li v-for="(installment_info,index) in details.installment_info" :key="index">
+          <h3>{{installment_info.installment_desc}}</h3>
+          <p>{{installment_info.service_charge_desc}}</p>
+        </li>
+      </ul>
+      <div @click="fenqi" class="confim">确定</div>
+
+    </div>
   </div>
 </template>
 
@@ -112,6 +129,7 @@ export default {
     return {
       details: "",
       isshow: false,
+      fenqiIsshow:false,
       realdata: {},
       productCount: 1,
       product_price: "",
@@ -131,6 +149,7 @@ export default {
       }
     });
     this.details = result.data;
+    console.log(result.data.installment_info)
     this.product_price = result.data.goods_info.product_price;
     this.market_price = result.data.goods_info.market_price;
     this.rank_name = result.data.user_price_info.rank_name;
@@ -198,6 +217,9 @@ export default {
 
     chosegoods() {
       this.isshow = !this.isshow;
+    },
+    fenqi(){
+      this.fenqiIsshow = !this.fenqiIsshow
     }
   },
   computed: {
@@ -534,4 +556,52 @@ export default {
       font-size 0.14rem
       line-height 0.5rem
       color #fff
+  .fenqi
+    position absolute
+    bottom 0 
+    background #fff 
+    width 100%
+    z-index 3
+    height 3.4rem 
+    h2
+      border-bottom 0.05px solid #e5e5e5
+      height .5rem
+      line-height .5rem
+      text-align center
+    .quxiao
+      position absolute
+      right .16rem
+      top .12rem
+      font-size .14rem
+    ul 
+      margin-left .15rem
+      li
+        height .46rem
+        margin .1rem 0 0 .15rem
+        border-bottom 0.05px solid #e5e5e5 
+        h3 
+          font-weight normal 
+        p 
+          font-size .1rem
+          color #999
+
+    .confim
+      background #9b885f
+      height .5rem
+      line-height .5rem
+      color #fff
+      font-size .16rem
+      text-align center
+      position absolute
+      bottom 0
+      width 100%
+  //蒙层
+  .mengceng
+    height 100%
+    width 100%
+    background black
+    position absolute
+    z-index 2
+    opacity 0.5
+    bottom 0   
 </style>
