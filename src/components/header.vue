@@ -6,7 +6,7 @@
           <i>5LUX.COM</i>
         <!-- </a> -->
       </div>
-      <span class="yo-ico">&#xe6cd;</span><b v-show="goodsNumber>0">{{goodsNumber}}</b>
+      <span class="yo-ico"  @click="gotocar">&#xe6cd;</span><b v-show="goodsNumber>0">{{goodsNumber}}</b>
     </header>
 </template>
 
@@ -22,6 +22,10 @@ export default {
   methods: {
     search(){
       this.$router.push('/search')
+    },
+    gotocar(){
+      console.log(1)
+      this.$router.push('/car')
     }
   },
   computed:{

@@ -15,7 +15,8 @@
             </b>
           </div>
           <span>{{details.goods_info.tax_post_info}}</span>
-          <i class="show"></i>
+          {{description}}
+          <!-- <i class="show"></i> -->
         </div>
         <div class="recommend">
           <a :href="details.editor_recommend.ad_url">
@@ -53,9 +54,9 @@
             <i class="yo-ico">&#xe610;</i>
             <b>客服</b>
           </li>
-          <li>
+          <li @click="gotocar">
             <i class="yo-ico">&#xe6cd;</i><span>{{goodsNumber}}</span>
-            <b>购物袋</b>
+            <b >购物袋</b>
           </li>
           <li @click="chosegoods">加入购物袋</li>
           <li>立即购买</li>
@@ -66,7 +67,7 @@
     <div v-show="isshow" class="addgoods">
       <div class="pttitle">
         <div class="ptimg">
-          <img :src="realdata.good_info.thumb" alt />
+          <img :src="imgurl" alt />
         </div>
         <div class="middle">
           <h4>{{realdata.good_info.sku_title}}</h4>
@@ -134,7 +135,11 @@ export default {
       productCount: 1,
       product_price: "",
       market_price: "",
-      rank_name: ""
+      rank_name: "",
+      description:'',
+      imgurl:'',
+      mbpage_title:'',
+      brand_name:''
     };
   },
   components: {
@@ -153,6 +158,9 @@ export default {
     this.product_price = result.data.goods_info.product_price;
     this.market_price = result.data.goods_info.market_price;
     this.rank_name = result.data.user_price_info.rank_name;
+    this.description  = result.data.para_arr[3].slice(4)
+    this.mbpage_title = result.data.goods_info.mbpage_title
+    this.brand_name = result.data.goods_info.brand_name
     //获取红卡价的信息
     this.price = {
       nameone:
@@ -170,6 +178,7 @@ export default {
       }
     });
     this.realdata = message.data;
+    this.imgurl = message.data.good_info.thumb
   },
   methods: {
     //返回按钮
@@ -204,7 +213,11 @@ export default {
       var data = {
         price: this.product_price,
         productCount: this.productCount,
-        id: this.$route.params.id
+        id: this.$route.params.id,
+        name:this.description,
+        imgurl:this.imgurl,
+        mbpage_title:this.mbpage_title,
+        brand_name:this.brand_name
       };
       this.$store.commit("addTocar", data);
       //加入购物车1秒后，消失
@@ -220,6 +233,9 @@ export default {
     },
     fenqi(){
       this.fenqiIsshow = !this.fenqiIsshow
+    },
+    gotocar(){
+      this.$router.push('/car')
     }
   },
   computed: {

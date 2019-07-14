@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 const store =   new Vuex.Store({
   state: {
-    goodsList:[]
+    goodsList:JSON.parse(localStorage.getItem('goodsList')) || []
   },
   mutations:{
     addTocar(state,data){
@@ -30,5 +30,9 @@ const store =   new Vuex.Store({
   actions: {
 
   }
+})
+//监听事件，每次进入mutations时，都会进入这个方法，将数据放入localstorg中
+store.subscribe((mutations,state)=>{
+  localStorage.setItem('goodsList',JSON.stringify(state.goodsList))
 })
 export default store
