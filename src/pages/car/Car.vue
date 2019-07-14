@@ -1,8 +1,19 @@
 <template>
   <div class="car">
-    <div class="car-header">
-      <i @click="back"></i> <span>购物袋()</span>
+    <div class="toptab">
+      <div class="car-header">
+        <i @click="back"></i> <p>购物袋()</p>
+        <span>编辑</span>
+      </div>
+      <div class="car-bottom">
+        <p>
+          温馨提示：现在登录，您可以同步电脑与手机购物袋中的商品
+        </p>
+        <span>登录</span>
+
+      </div>
     </div>
+    
     <ul class="car-contain">
       <li v-for="good in goods" :key="good.id">
         <div class="header">
@@ -12,8 +23,11 @@
         </div>
         
         <div class="li-contain">
-          <img :src="good.imgurl" alt="">
-          <p>{{good.name}}</p>
+          <div>
+            <img :src="good.imgurl" alt="">
+          </div>
+          
+          <span>{{good.brand_name}}</span>
         </div>
        
 
@@ -55,23 +69,50 @@ export default {
 <style lang="stylus">
 .car 
   background #fff
-  .car-header
-    height .44rem
-    line-height .44rem   
-    border-bottom: 0.5px solid rgba(0,0,0,.5);
-    i 
-      background url('/image/backWhite.png')
-      width .22rem
-      height .22rem
-      background-size .22rem .22rem
-      display inline-block
-
+  .toptab
+    .car-header
+      height .44rem
+      line-height .44rem   
+      border-bottom: 0.5px solid rgba(0,0,0,.5);
+      i 
+        background url('/image/backWhite.png')
+        width .22rem
+        height .22rem
+        line-height .22rem
+        background-size .22rem .22rem
+        display inline-block
+        position absolute
+        top .11rem
+        left .15rem
+      p 
+        text-align center
+      span 
+        position absolute
+        right .1rem
+        top 0
+    .car-bottom
+      height .54rem
+      display flex
+      align-items center
+      
+      p 
+        padding-left .15rem
+        margin .05rem 0
+      span 
+        width 50px
+        height .3rem
+        background #9b885f
+        color #fff
+        text-align center
+        line-height .3rem
   .car-contain
     
     li
       margin-top .10rem 
+      border-top 10px solid #e5e5e5
       .header
         position relative
+        border-bottom 1px solid #e5e5e5
         span
           display inline-block
           margin-left .15rem
@@ -94,6 +135,7 @@ export default {
           color #666
 
       .li-contain
+        padding .1rem 0
         img 
           width .9rem 
 
