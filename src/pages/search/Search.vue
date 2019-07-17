@@ -7,9 +7,9 @@
       </div>
       <span @click="cancel">取消</span>
     </div>
-    <div>
- {{searchlist}}
-    </div>
+    <!-- <div>
+      {{searchlist}}
+    </div> -->
    
     <div class="contain">
       <div class="hotsearch">
@@ -73,7 +73,7 @@ export default {
       });
       this.searchlist = result.data;
 
-      console.log(result);
+      console.log(result.data);
     }
   }
 };

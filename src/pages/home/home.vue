@@ -51,9 +51,13 @@ export default {
 main 
   overflow auto
   .mint-swipe 
-    height 70%
-    img 
-      width 100%
+    height 0
+    font-size 0 
+    padding-bottom 110%
+    .mint-swipe-items-wrap
+      overflow visible
+      img 
+        width 100%
 
 
 </style>
